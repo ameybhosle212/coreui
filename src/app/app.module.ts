@@ -40,6 +40,7 @@ import { CustomerComponent } from './views/customer/customer.component';
 import { InvoicesModule } from './views/invoices/invoices.module';
 import { MainFileUploadComponent } from './views/main-file-upload/main-file-upload.component';
 import { AllApiCallsService } from './all-api-calls.service';
+import { ItemsComponent } from './views/items/items.component';
 
 const APP_CONTAINERS = [
   DefaultAsideComponent,
@@ -49,7 +50,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, CustomerComponent, MainFileUploadComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, CustomerComponent, MainFileUploadComponent, ItemsComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,

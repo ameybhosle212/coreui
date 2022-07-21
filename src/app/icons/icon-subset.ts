@@ -4,6 +4,7 @@ import {
   cilSpeedometer,
   cilAirplay,
   cilPeople,
+  cilInfo,
   cilEnvelopeOpen
 } from '@coreui/icons';
 
@@ -12,6 +13,7 @@ export const iconSubset = {
   cilMenu,
   cilAirplay,
   cilPeople,
+  cilInfo,
   cilSpeedometer,
   cilEnvelopeOpen
 };
@@ -23,4 +25,5 @@ export enum IconSubset {
   cilEnvelopeOpen = 'cilEnvelopeOpen',
   cilAirplay = 'cilAirplay',
   cilSpeedometer = 'cilSpeedometer',
+  cilInfo = 'cilInfo'
 }

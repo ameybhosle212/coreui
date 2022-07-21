@@ -27,6 +27,15 @@ export const navItems: INavData[] = [
     }
   },
   {
+    name:$localize`Items`,
+    url:'/items',
+    iconComponent: { name: 'cil-Info' },
+    badge: {
+      color: 'info',
+      text: $localize`NEW`
+    }
+  },
+  {
     name:$localize`File Upload`,
     url:'/fileupload',
     iconComponent: { name: 'cil-Menu' },
@@ -34,5 +43,5 @@ export const navItems: INavData[] = [
       color: 'info',
       text: $localize`NEW`
     }
-  },
+  }
 ];

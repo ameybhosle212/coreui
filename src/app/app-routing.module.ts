@@ -5,6 +5,7 @@ import { DefaultLayoutComponent } from './containers';
 import { CustomerComponent } from './views/customer/customer.component';
 import { AllInvoiceComponent } from './views/invoices/all-invoice/all-invoice.component';
 import { NewInvoiceComponent } from './views/invoices/new-invoice/new-invoice.component';
+import { ItemsComponent } from './views/items/items.component';
 import { MainFileUploadComponent } from './views/main-file-upload/main-file-upload.component';
 
 const routes: Routes = [
@@ -50,6 +51,19 @@ const routes: Routes = [
       {
         path: '',
         component:MainFileUploadComponent
+      }
+    ]
+  },
+  {
+    path: 'items',
+    component: DefaultLayoutComponent,
+    data: {
+      title: $localize`Item`
+    },
+    children: [
+      {
+        path: '',
+        component:ItemsComponent
       }
     ]
   },
