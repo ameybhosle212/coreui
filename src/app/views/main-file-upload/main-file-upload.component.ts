@@ -90,6 +90,9 @@ export class MainFileUploadComponent implements OnInit {
       
       this.appppp.uploadAllFile(this.array , this.formGroup.value.documentType , this.formGroup.value.documentType ).subscribe(result =>{
         console.log(result);
+        if(result == "files uploaded successfully"){
+          
+        }
         // this.modalService.clos
       })
     // }else{
