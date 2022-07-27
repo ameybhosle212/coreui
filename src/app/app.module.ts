@@ -5,10 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from "@angular/common/http";
 // Import routing module
 import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from '@auth0/auth0-angular';
 
 // Import app component
 import { AppComponent } from './app.component';
-
+import { NgbDropdown } from "@ng-bootstrap/ng-bootstrap";
 // Import containers
 import {
   DefaultAsideComponent,
@@ -31,7 +32,6 @@ import {
   CardComponent,
   ModalModule,
   FormModule
-  
 } from '@coreui/angular-pro';
 
 import { IconModule, IconSetService } from '@coreui/icons-angular';
@@ -41,6 +41,9 @@ import { InvoicesModule } from './views/invoices/invoices.module';
 import { MainFileUploadComponent } from './views/main-file-upload/main-file-upload.component';
 import { AllApiCallsService } from './all-api-calls.service';
 import { ItemsComponent } from './views/items/items.component';
+import { CookieService } from 'ngx-cookie-service';
+import { LoginComponent } from './views/login/login.component';
+import { AuthGuard } from './auth.guard';
 
 const APP_CONTAINERS = [
   DefaultAsideComponent,
@@ -50,7 +53,7 @@ const APP_CONTAINERS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...APP_CONTAINERS, CustomerComponent, MainFileUploadComponent, ItemsComponent],
+  declarations: [AppComponent, ...APP_CONTAINERS, CustomerComponent, MainFileUploadComponent, ItemsComponent, LoginComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
@@ -65,6 +68,10 @@ const APP_CONTAINERS = [
     CardModule,
     NavModule,
     ButtonModule,
+    AuthModule.forRoot({
+      domain: 'login-mot1.us.auth0.com',
+      clientId: 'ClNJpqQ7tFKfKoY6ki3v0nnKMFgPgR2B'
+    }),
     TableModule,
     ReactiveFormsModule,
     SidebarModule,
@@ -80,7 +87,7 @@ const APP_CONTAINERS = [
       useClass: HashLocationStrategy
     },
     IconSetService,
-    Title,AllApiCallsService
+    Title,AllApiCallsService,CookieService,AuthGuard
   ],
   bootstrap: [AppComponent]
 })

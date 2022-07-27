@@ -3,6 +3,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MD5 } from 'crypto-js';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-customer',
@@ -134,16 +135,21 @@ export class CustomerComponent implements OnInit {
     return this.form.controls;
   }
 
-  constructor(private modalService: NgbModal, private http: HttpClient) {}
+  constructor(private modalService: NgbModal, private http: HttpClient , private cookie : CookieService) {}
   ngOnInit(): void {
-    let userId = '3a053181-1a15-fd06-fe02-d02979d0460b';
-    let url = `https://localhost:44323/api/app/users/${userId}/customers`;
-    this.http.get(url).subscribe((result) => {
-      // console.log(Object.values(result));
+    // let userId = '3a053181-1a15-fd06-fe02-d02979d0460b';
+    // let url = `https://localhost:44323/api/app/users/${userId}/customers`;
+    // this.http.get(url).subscribe((result) => {
+    //   // console.log(Object.values(result));
+    //   this.allCustomer = Object.values(result);
+    //   console.log(this.allCustomer);
+      
+    // });
+    this.http.get(`https://localhost:44323/api/app/users/${this.cookie.get("id")}/customers`).subscribe(result =>{
       this.allCustomer = Object.values(result);
       console.log(this.allCustomer);
       
-    });
+    })
   }
 
   updateValue(data: any, value: string) {

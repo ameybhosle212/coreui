@@ -18,17 +18,42 @@
           Dashboard
         </a>
       </c-nav-item>
+      <c-nav-item>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+      </c-nav-item>
+      <c-nav-item>
+        <c-dropdown>
+          <button cButton cDropdownToggle color="secondary">Dropdown button</button>
+          <ul cDropdownMenu dark>
+            <li><button cDropdownItem>Action</button></li>
+            <li><button cDropdownItem>Another action</button></li>
+            <li><button cDropdownItem>Something else here</button></li>
+          </ul>
+        </c-dropdown>
+      </c-nav-item>
     </c-header-nav>
-
+    <!-- <c-dropdown> -->
+      
+      
+    <!-- </c-dropdown> -->
     <!--aside toggler-->
-    <button
+    <!-- <button
       toggle="visible"
       cHeaderToggler
       cSidebarToggle="aside1"
       class="px-md-0 me-md-3 d-none d-sm-block"
     >
       <svg cIcon name="cilApplicationsSettings" size="lg"></svg>
-    </button>
+    </button> -->
   </c-container>
   <c-header-divider></c-header-divider>
   <c-container [fluid]="true">
